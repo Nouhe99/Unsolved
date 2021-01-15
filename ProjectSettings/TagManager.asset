@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - objectif
+  - End
+  - dialogue
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Post Processing
+  - flashbak
+  - PH3
+  - PH2
+  - PH1
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 654123077
+    locked: 0
+  - name: Fixed
+    uniqueID: 2087108301
+    locked: 0
+  - name: Hidden
+    uniqueID: 1997384029
+    locked: 0
+  - name: Interactable
+    uniqueID: 412569383
+    locked: 0
+  - name: other
+    uniqueID: 188674029
+    locked: 0
+  - name: New Layer
+    uniqueID: 2772991277
+    locked: 0
+  - name: New Layer
+    uniqueID: 3314182277
+    locked: 0
