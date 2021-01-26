@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
+    #region Variables
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     private int index;
@@ -28,6 +29,7 @@ public class Dialogue : MonoBehaviour
     public bool EndScene;
     public bool FlahBackBool;
     public bool Casesolved;
+    #endregion
 
     void Start()
     {
@@ -74,7 +76,7 @@ public class Dialogue : MonoBehaviour
         {
             textDisplay.text = "";
             continueButon.SetActive(false);
-            //nbadel e scene ki youfa dialogue w nebda kamalt l case
+            //Change scene when the last dilogue in the case is over
 
             if (EndScene)
             {
@@ -102,13 +104,13 @@ public class Dialogue : MonoBehaviour
                         if (PuzzlePart != null)
                             PuzzlePart.SetActive(true);
                     }
-                    //mel case bech nemchi lel flashback
+                    //return from the case to the flashabck
                     if (!Flashback.activeInHierarchy)
                     {
                         Flashback.SetActive(true);
                         CurrentCase.SetActive(false);
                     }
-                    //mel flashback bech anrjaa lel case
+                    //return from te flashback to the case
                     else if (Flashback.activeInHierarchy)
                     {
 
@@ -122,10 +124,8 @@ public class Dialogue : MonoBehaviour
                     Debug.Log("not flashback");
                     DialogueUI.SetActive(false);
                     NavigationUI.SetActive(true);
-                    Itemsui.SetActive(true);
+                    Itemsui.SetActive(true); // show an item after finished the flashback and going back to the actual case
                 }
-
-                //Destroy(gameObject);
 
             }
 

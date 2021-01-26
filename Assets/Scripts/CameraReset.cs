@@ -13,6 +13,7 @@ public class CameraReset : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    //Reset the Camera Position and Size when zooming in and out, of an object
     void Update()
     {
         if (Input.GetMouseButtonDown(1))

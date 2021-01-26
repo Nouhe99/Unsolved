@@ -6,17 +6,17 @@ using UnityEngine.EventSystems;
 
 public enum TypeofItem
 {
-    Zoomer,
-    Collectable,
-    UiSelectable,
-    OpenClose,
-    Spin,
-    Navigation,
-    PlaceHolder,
+    Zoomer, 
+    Collectable, //collect and object by destroying it in the scene, and showing it's sprite in the inventory 
+    UiSelectable, // select item in inventory
+    OpenClose, //a gameobject when clicked, it either shows an other object (sprite), or hide it if it's already shown
+    Spin, //spinable object, change its rotation when clicked
+    Navigation, //navigate left or right, from wall to wall
+    PlaceHolder, //a disabled sprite, where you should put the right collected item in it's place to be enabled 
     Coloring,
-    Search,
-    InputPuzzle,
-    Switcher,
+    Search, // when the gameobject is clicked, it moves (change its position) to show a hidden item behind it
+    InputPuzzle, //a worldspace canvas, where the player has a certain code to write to unlock an object
+    Switcher, //switch a sprite b yanother sprite wehn clicked
 
 }
 
@@ -356,6 +356,7 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
 
                 #region Coloring
                 case TypeofItem.Coloring:
+                    //check if the color brush is collected and seelcted
                     for (int j = 0; j < UiItems.transform.childCount; j++)
                     {
                         if (UiItems.transform.GetChild(j).GetComponent<Image>().sprite == ColorTool)
@@ -365,6 +366,7 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
                         }
                     }
 
+                    //the wall take either the color of the color bucket , or the color of the 1st and 2nd colors together
                     if (Item != null)
                     {
                         if (Item.GetComponent<Interactable>().IsActive)

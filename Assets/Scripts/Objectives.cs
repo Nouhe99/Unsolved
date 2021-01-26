@@ -8,13 +8,12 @@ using UnityEngine.SceneManagement;
 
 public enum TypeofObjective
 {
-    SpinCheck,
-    SlotPuzzle,
-    ColoringPuzzle,
-    Key,
-    Save,
-    Load,
-    SwitchersCheck,
+    SpinCheck,  //check if all spinables are in the right angle, show an object
+    SlotPuzzle, //check if all the placeholders of the puzzle are right , show an object
+    ColoringPuzzle, //check if the color chosen is true
+    Key, //if the listed objectives are done, show the key to open the door( or other object) 
+    Save, //saving the advancement of he case with playerpref
+    Load, // loading th e advancement of the case with playerpref
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -85,7 +84,6 @@ public class Objectives : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        //still need to disable interactable script from objects related to a completed puzzle
         if (GameObject.Find("Ui") != null)
             UiItems = GameObject.Find("Ui").transform.Find("Items").gameObject;
         finished = false;
